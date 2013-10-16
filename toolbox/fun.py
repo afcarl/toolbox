@@ -26,15 +26,18 @@ def clip(x, a, b):
         return None
     return min(max(x, a), b)
 
-def norm(p1, p2):
+def norm(p1):
+    return math.sqrt(sum(p1_i**2 for p1_i in p1))
+
+def dist(p1, p2):
     return math.sqrt(sum((p1i-p2i)**2 for p1i, p2i in zip(p1, p2)))
 
 
-def norm_sq(p1, p2):
+def dist_sq(p1, p2):
     return sum((p1i-p2i)**2 for p1i, p2i in zip(p1, p2))
 
 
-def norm_sqw(p1, p2, w = None):
+def dist_sqw(p1, p2, w = None):
     if w is None:
         return norm_sq(p1, p2)
     else:
