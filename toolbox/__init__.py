@@ -1,1 +1,1 @@
-from .fun import norm, norm_sq, norm_sqw, flatten, gaussian_kernel, roulette_wheel
+from .fun import norm, dist, dist_sq, dist_sqw, flatten, gaussian_kernel, roulette_wheel
