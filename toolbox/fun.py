@@ -20,6 +20,12 @@ def flattenLists(l):
         else:
             yield el
 
+def mapmap(m, f):
+    if isinstance(m, collections.Iterable) and not isinstance(m, basestring):
+        return [mapmap(e, f) for e in m]
+    else:
+        return f(m)
+
 def clip(x, a, b):
     """Return the nearest point of x in the interval [a, b]"""
     if a > b:
