@@ -72,7 +72,7 @@ class MeshGrid(object):
         try:
             idx = random.randint(0, len(self._nonempty_cells) - 1)
         except ValueError:
-            raise ValueError, "can't draw from an empty meshgrid"
+            raise ValueError("can't draw from an empty meshgrid")
         e, md = self._nonempty_cells[idx].draw(replace = replace)
         if not replace and len(self._nonempty_cells[idx]) == 0:
             self._nonempty_cells.pop(idx)
